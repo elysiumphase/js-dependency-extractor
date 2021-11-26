@@ -1,0 +1,54 @@
+{
+  "name": "js-dependency-extractor",
+  "version": "1.0.0",
+  "author": "Adrien Valcke <adrienvalcke@icloud.com> (https://github.com/adrienv1520)",
+  "description": "A JavaScript and TypeScript files dependency extractor",
+  "keywords": [
+    "JavaScript",
+    "TypeScript",
+    "files",
+    "dependency",
+    "extractor",
+    "js",
+    "ts"
+  ],
+  "engines": {
+    "node": ">=10.17.0",
+    "npm": ">=6.11.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:adrienv1520/js-dependency-extractor.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "bin": {
+    "jsde": "bin/index.js"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint bin/ lib/",
+    "pretest": "npm run lint",
+    "test": "mocha test/* --exit"
+  },
+  "dependencies": {
+    "bugbug": "1.0.2",
+    "commander": "8.3.0"
+  },
+  "devDependencies": {
+    "chai": "4.3.4",
+    "eslint": "8.3.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "2.25.3",
+    "mocha": "9.1.3"
+  },
+  "private": false,
+  "preferGlobal": true,
+  "analyze": false,
+  "license": "MIT"
+}

@@ -1,0 +1,3 @@
+const gm = require('gm');
+const magic = require('image-magic');
+const sharp = require('sharp');
