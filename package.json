@@ -1,6 +1,6 @@
 {
   "name": "js-dependency-extractor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Adrien Valcke <adrienvalcke@icloud.com> (https://github.com/adrienv1520)",
   "description": "A JavaScript and TypeScript files dependency extractor",
   "keywords": [
