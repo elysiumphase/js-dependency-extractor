@@ -5,7 +5,7 @@ const {
   extractDependencyNames,
   extractRequiresImportsFromDirectory,
   extractRequiresImportsFromFile,
-} = require('../../lib/extractor');
+} = require('../../src/extractor');
 
 // in all fixtures my-project directory
 const myProjectRequiresImports = {

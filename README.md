@@ -5,22 +5,41 @@
 <p>
 
 # Table of Contents
+
+- [Table of Contents](#table-of-contents)
 - [Presentation](#presentation)
 - [Installation](#installation)
 - [Technical information](#technical-information)
+  - [Stack](#stack)
+  - [Tests](#tests)
+    - [Code quality](#code-quality)
+    - [Unit](#unit)
+  - [Logging and debugging](#logging-and-debugging)
+  - [Security](#security)
 - [Requirements](#requirements)
+  - [Production](#production)
+  - [Development](#development)
 - [Usage](#usage)
   - [Lib](#lib)
     - [Import](#import)
     - [jsDependencyExtractor(options)](#jsdependencyextractoroptions)
   - [CLI](#cli)
+    - [Command name](#command-name)
+    - [Options](#options)
+    - [Print](#print)
+    - [Example](#example)
   - [Environment variables](#environment-variables)
   - [Errors](#errors)
+    - [Object structure](#object-structure)
+    - [Codes](#codes)
   - [Development](#development-1)
+    - [Test](#test)
+      - [Linting](#linting)
+      - [Unit](#unit-1)
 - [Code of Conduct](#code-of-conduct)
 - [Contributing](#contributing)
 - [Support](#support)
-- [Security](#security)
+- [Security](#security-1)
 - [License](#license)
 
 # Presentation
@@ -55,7 +74,7 @@ Mocha and Chai.
 
 ## Logging and debugging
 
-Uses [bugbug](https://github.com/adrienv1520/bugbug) for debugging.
+Uses [bugbug](https://github.com/elysiumphase/bugbug) for debugging.
 
 ## Security
 
@@ -64,9 +83,11 @@ Uses [bugbug](https://github.com/adrienv1520/bugbug) for debugging.
 # Requirements
 
 ## Production
+
 - See [Stack](#stack)
 
 ## Development
+
 - See [Stack](#stack)
 
 # Usage
@@ -88,6 +109,7 @@ const jsDependencyExtractor = require('js-dependency-extractor');
 Extract JavaScript and TypeScript dependencies from a directory or a file.
 
 **Note**:
+
 - support recursive extracting;
 - support scoped dependencies;
 - can merge partial requires/imports into one same dependency;
@@ -96,16 +118,17 @@ Extract JavaScript and TypeScript dependencies from a directory or a file.
 
 <br/>
 
-  - `options` **<Object\>**
-    - `path` **<String\>** Path to directory or file. Could be absolute or relative. *Default*: `none` *Required*: `true`
-    - `ignorePaths` **<Array\>** Paths to ignore. Could be absolute, relative or a pattern. *Default*: `none` *Required*: `false`
-    - `mergePartial` **<Boolean\>** Whether to merge partial requires/imports into one same dependency. *Default*: `false` *Required*: `false`
-    - `onlyExtensions` **<Array\>** File extensions to watch for. Empty list or null values mean to look up into all file extensions. *Default*: `none` *Required*: `false`
-  - Returns: **<Array\>** Alphabetically ordered list of dependencies (empty array if no dependency found)
+- `options` **<Object\>**
+  - `path` **<String\>** Path to directory or file. Could be absolute or relative. *Default*: `none` *Required*: `true`
+  - `ignorePaths` **<Array\>** Paths to ignore. Could be absolute, relative or a pattern. *Default*: `none` *Required*: `false`
+  - `mergePartial` **<Boolean\>** Whether to merge partial requires/imports into one same dependency. *Default*: `false` *Required*: `false`
+  - `onlyExtensions` **<Array\>** File extensions to watch for. Empty list or null values mean to look up into all file extensions. *Default*: `none` *Required*: `false`
+- Returns: **<Array\>** Alphabetically ordered list of dependencies (empty array if no dependency found)
 
 <br/>
 
 **Example**:
+
 ```javascript
 // my-project/app/index.ts
 import path from 'path';
@@ -192,12 +215,12 @@ See [jsDependencyExtractor(options)](#jsdependencyextractoroptions) for more det
 
 ### Options
 
-  - `-p, --path <path>` Path to directory or file. Could be absolute or relative. *Default*: `none` *Required*: `true`
-  - `-d, --debug` Output extra debugging. *Default*: `false` *Required*: `false`
-  - `-e, --only-extensions [onlyExtensions...]` File extensions to watch for separated by a white space. Empty list or null values mean to look up into all file extensions. *Default*: `none` *Required*: `false`
-  - `-i, --ignore-paths [ignorePaths...]` Paths to ignore separated by a white space. Could be absolute, relative or a pattern. *Default*: `none` *Required*: `false`
-  - `-m, --merge-partial` Whether to merge partial requires/imports into one same dependency. *Default*: `false` *Required*: `false`
-  - `-v, --version` Output the current version. *Default*: `none` *Required*: `false`
+- `-p, --path <path>` Path to directory or file. Could be absolute or relative. *Default*: `none` *Required*: `true`
+- `-d, --debug` Output extra debugging. *Default*: `false` *Required*: `false`
+- `-e, --only-extensions [onlyExtensions...]` File extensions to watch for separated by a white space. Empty list or null values mean to look up into all file extensions. *Default*: `none` *Required*: `false`
+- `-i, --ignore-paths [ignorePaths...]` Paths to ignore separated by a white space. Could be absolute, relative or a pattern. *Default*: `none` *Required*: `false`
+- `-m, --merge-partial` Whether to merge partial requires/imports into one same dependency. *Default*: `false` *Required*: `false`
+- `-v, --version` Output the current version. *Default*: `none` *Required*: `false`
 
 ### Print
 
@@ -222,7 +245,7 @@ uuid
 
 | name | type | description | default | example |
 | :--- | :--- | :---------- | :------ | :------ |
-| **DEBUG** | Debug | Debug mode. See [bugbug](https://github.com/adrienv1520/bugbug). | none | `js-dependency-extractor:*` |
+| **DEBUG** | Debug | Debug mode. See [bugbug](https://github.com/elysiumphase/bugbug). | none | `js-dependency-extractor:*` |
 
 **\*required**
 
@@ -245,35 +268,38 @@ Errors emitted by *js-dependency-extractor* extend native Error:
 
 | name | code | description | module |
 | ---- | ---- | ----------- | ------ |
-| DependencyExtractionError | `dependency-extraction-error` | Dependency extraction encountered an error | lib/index |
+| DependencyExtractionError | `dependency-extraction-error` | Dependency extraction encountered an error | src/index |
 
 ## Development
 
 ### Test
 
-`npm test`
-
 #### Linting
 
-`npm run test:lint`
+`npm run lint`
 
 #### Unit
 
-`npm run test:unit`
+`npm run test`
 
 # Code of Conduct
+
 This project has a [Code of Conduct](.github/CODE_OF_CONDUCT.md). By interacting with this repository, organization, or community you agree to abide by its terms.
 
 # Contributing
+
 Please have a look at our [TODO](TODO.md) for any work in progress.
 
 Please take also a moment to read our [Contributing Guidelines](.github/CONTRIBUTING.md) if you haven't yet done so.
 
 # Support
+
 Please see our [Support](.github/SUPPORT.md) page if you have any questions or for any help needed.
 
 # Security
+
 For any security concerns or issues, please visit our [Security Policy](.github/SECURITY.md) page.
 
 # License
+
 [MIT](LICENSE.md).

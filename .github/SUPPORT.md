@@ -15,7 +15,7 @@ and our [TODO](../TODO.md).
 
 If you've found a bug in a [supported version](#supported-versions)
 of js-dependency-extractor, please report it with the
-[issue tracker](https://github.com/adrienv1520/js-dependency-extractor/issues).
+[issue tracker](https://github.com/elysiumphase/js-dependency-extractor/issues).
 
 ## Supported Versions
 The latest *stable* major version is currently supported by the team.

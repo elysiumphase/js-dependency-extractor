@@ -1,6 +1,6 @@
 const { join: joinPath } = require('path');
 const { expect } = require('./Common');
-const lib = require('../lib');
+const lib = require('../src');
 
 const fullDependencies = [
   '@airbnb/example-lib/partial',
