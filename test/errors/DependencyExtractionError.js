@@ -1,5 +1,5 @@
 const { expect } = require('../Common');
-const DependencyExtractionError = require('../../lib/errors/DependencyExtractionError');
+const DependencyExtractionError = require('../../src/errors/DependencyExtractionError');
 
 describe('#errors', function() {
   context('when using DependencyExtractionError', function() {

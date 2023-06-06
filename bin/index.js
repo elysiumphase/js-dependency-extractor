@@ -2,7 +2,7 @@
 
 const { Command } = require('commander');
 const { bin, description, version } = require('../package.json');
-const jsDependencyExtractor = require('../lib');
+const jsDependencyExtractor = require('../src');
 
 // run
 const run = async function run() {

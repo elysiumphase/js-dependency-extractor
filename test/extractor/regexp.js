@@ -4,7 +4,7 @@ const {
   extractImportRegExp,
   extractRequireRegExp,
   extractScopedDependencyRegExp,
-} = require('../../lib/extractor/regexp');
+} = require('../../src/extractor/regexp');
 
 describe('#extractor regexp', function() {
   context('when using extractDependencyFromPartialRegExp', function() {
