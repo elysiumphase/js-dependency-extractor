@@ -1,6 +1,6 @@
 {
   "name": "js-dependency-extractor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Elysium Phase <hi@elysiumphase.com> (https://github.com/elysiumphase)",
   "description": "A JavaScript and TypeScript files dependency extractor",
   "keywords": [
